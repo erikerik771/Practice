@@ -231,6 +231,49 @@
                 //do something with that number
             }
 
+            //------------------------------------------------------------------------- Did not teach--------------------------------------------------------------------------
+            //-----------
+            //Metode
+            //-----------
+
+            int maxNumar = GetMaximum(2, 5); //maxNumar va primi valoarea returnata de metoda. apelarea metodei se face numele metodei urmat de valori care se trimit ca parametru
+
+            LogToConsole("heeei");//metoda se poate apela la fel ca celalalt singura diferenta e ca nu se face intr-un assignment pentru ca nu e un tip de data.
+
+            int maxNumarDin3Valori = GetMaximum(2, 3, 5); //va apela a doua versiune a metodei cu valorile 2, 3, 5 si default value 0.
+        }
+
+        //declara o metoda care are return type int si ia doi parametrii number 1 si number 2
+        private static int GetMaximum(int number1, int number2)
+        {
+            return number1 > number2 ? number1 : number2; // return va iesi din metoda si va da valoarea returnata.
+        }
+
+        //Overload al aceleias metode asta ia 3 sau 4 parametri, number4 este optional daca nu are valoare default va fi 0.
+        private static int GetMaximum(int number1, int number2, int number3, int number4 = 0)
+        {
+            if (number1 > number2 && number1 > number3)
+            {
+                return number1;
+            }
+            else if (number2 > number1 && number2 > number3)
+            {
+                return number2;
+            }
+            else if (number3 > number1 && number3 > number1)
+            {
+                return number3;
+            }
+            else
+            {
+                return number4;
+            }
+        }
+
+        //Aceasta metoda nu are niciun tip de return. Este de tipul void ceea ce inseamna ca executa un cod fara a aduce inapoi o valoare.
+        private static void LogToConsole(string Message)
+        {
+            Console.WriteLine(Message); // Aceasta metoda va loga in consola mesajul primit ca si parametru si nu va aduce inapoi nici o valoare dupa.
         }
     }
 }
